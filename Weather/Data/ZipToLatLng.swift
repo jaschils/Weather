@@ -8,13 +8,13 @@
 import Foundation
 
 struct Data: Decodable {
-    var data:DataDetails
+    var data: [DataDetails]?
 }
 
 struct DataDetails: Decodable {
-    var latitude:Double
-    var longitude:Double
-    var postal_code:String
-    var region:String
-    var administrative_area:String
+    var latitude: Double?
+    var longitude: Double?
+    var postal_code: String?
+    var region: String?
+    var administrative_area: String?
 }

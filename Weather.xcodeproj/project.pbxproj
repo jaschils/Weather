@@ -67,10 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				BFF5BB3526752122005CA18D /* Data */,
+				BFF5BB3C2675C09A005CA18D /* View Controllers */,
 				BFEB463B267503DA003004F0 /* AppDelegate.swift */,
 				BFEB463D267503DA003004F0 /* SceneDelegate.swift */,
-				BFEB463F267503DA003004F0 /* BaseViewController.swift */,
-				BFF5BB31267515A0005CA18D /* WeatherViewController.swift */,
 				BFEB4641267503DA003004F0 /* Main.storyboard */,
 				BFEB4644267503DD003004F0 /* Assets.xcassets */,
 				BFEB4646267503DD003004F0 /* LaunchScreen.storyboard */,
@@ -88,6 +87,15 @@
 				BFF5BB3A26757D17005CA18D /* ZipToLatLngRequest.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		BFF5BB3C2675C09A005CA18D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BFEB463F267503DA003004F0 /* BaseViewController.swift */,
+				BFF5BB31267515A0005CA18D /* WeatherViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

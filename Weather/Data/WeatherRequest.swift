@@ -7,11 +7,6 @@
 
 import Foundation
 
-enum WeatherError:Error {
-    case noDataAvailable
-    case canNotProcessData
-}
-
 struct WeatherRequest {
     let resourceURL:URL
     let API_KEY = "e7f96f0d2ad8b2e0c7d14c5a61c499cc"
@@ -42,4 +37,9 @@ struct WeatherRequest {
         }
         dataTask.resume()
     }
+}
+
+enum WeatherError:Error {
+    case noDataAvailable
+    case canNotProcessData
 }

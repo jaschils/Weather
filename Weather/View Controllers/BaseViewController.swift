@@ -26,10 +26,26 @@ class BaseViewController: UIViewController {
     }
     
     @IBAction func btn_process(_ sender: Any) {
-        let zipCode = txtField_zipCode.text
-        print(zipCode ?? 12345)
-        if zipCode?.count == 5 {
-            ///TODO:  Call API to process zip code & return lat & lng
+        let zipCode = txtField_zipCode.text ?? ""
+        if zipCode.count == 5 {
+            UserDefaults.standard.setValue(zipCode, forKey: "zipCode")
+            // TODO:  Call API to process zip code & return lat & lng
+            let dataRequest = ZipToLatLngRequest()
+            dataRequest.getLatLng  { (result) in
+                print(result)
+            }
+            
+//            dataRequest.getLatLng { [weak self] result in
+//                switch result {
+//                case .failure(let error):
+//                    print(error)
+//                case .success(let dayWeather):
+//                    let daysWeather = dayWeather
+//                    print(daysWeather)
+//                }
+//            }
+        } else {
+            // TODO: UIAlertMessage
             
         }
         
@@ -38,8 +54,6 @@ class BaseViewController: UIViewController {
     
     
     @IBAction func btn_send(_ sender: Any) {
-        
-        
         
         //        WeatherRequest().getDailyWeather(42.1368, -83)
         let weatherRequest = WeatherRequest(lat: "42.1368", lng: "-83.8293")
@@ -55,7 +69,6 @@ class BaseViewController: UIViewController {
                 let daysWeather = dayWeather
                 print(daysWeather)
             }
-            
         }
     }
 
