@@ -16,5 +16,5 @@ struct DataDetails: Decodable {
     var longitude: Double?
     var postal_code: String?
     var region: String?
-    var administrative_area: String?
+    var locality: String?
 }

@@ -12,7 +12,7 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "weather"
+        title = "Weather"
         
         
     }

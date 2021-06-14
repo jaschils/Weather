@@ -66,6 +66,7 @@
 		BFEB463A267503D9003004F0 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				BFF5BB402677DABF005CA18D /* Utils */,
 				BFF5BB3526752122005CA18D /* Data */,
 				BFF5BB3C2675C09A005CA18D /* View Controllers */,
 				BFEB463B267503DA003004F0 /* AppDelegate.swift */,
@@ -96,6 +97,13 @@
 				BFF5BB31267515A0005CA18D /* WeatherViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BFF5BB402677DABF005CA18D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
