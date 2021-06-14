@@ -11,16 +11,31 @@ class BaseViewController: UIViewController {
 
     @IBOutlet weak var lbl_title: UILabel!
     @IBOutlet weak var lbl_zipCode: UILabel!
+    @IBOutlet weak var lbl_zipData: UILabel!
     @IBOutlet weak var txtField_zipCode: UITextField!
     
     @IBOutlet weak var btn_send: UIButton!
     @IBOutlet weak var btn_process: UIButton!
     
+    
+    var zipCodeDetails = [DataDetails]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.lbl_zipData.text = """
+                    \(self.zipCodeDetails[0].administrative_area ?? "")\n
+                    \(self.zipCodeDetails[0].latitude ?? 0.0)\n
+                    \(self.zipCodeDetails[0].longitude ?? 0.0)\n
+                    \(self.zipCodeDetails[0].postal_code ?? "")\n
+                    \(self.zipCodeDetails[0].region ?? "")\n
+                    """
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Base"
-        
         
         
     }
@@ -29,21 +44,17 @@ class BaseViewController: UIViewController {
         let zipCode = txtField_zipCode.text ?? ""
         if zipCode.count == 5 {
             UserDefaults.standard.setValue(zipCode, forKey: "zipCode")
-            // TODO:  Call API to process zip code & return lat & lng
             let dataRequest = ZipToLatLngRequest()
-            dataRequest.getLatLng  { (result) in
-                print(result)
-            }
             
-//            dataRequest.getLatLng { [weak self] result in
-//                switch result {
-//                case .failure(let error):
-//                    print(error)
-//                case .success(let dayWeather):
-//                    let daysWeather = dayWeather
-//                    print(daysWeather)
-//                }
-//            }
+            dataRequest.getLatLng { [weak self] result in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let details):
+                    //TODO: Process data into the app
+                    self?.zipCodeDetails = details
+                }
+            }
         } else {
             // TODO: UIAlertMessage
             

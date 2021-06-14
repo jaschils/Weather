@@ -60,6 +60,13 @@
                                     <action selector="btn_process:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nQ7-WW-NJt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2b-X2-LNf">
+                                <rect key="frame" x="26" y="450" width="366" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
@@ -70,6 +77,7 @@
                         <outlet property="btn_send" destination="pwz-Bj-rus" id="eCI-kD-58e"/>
                         <outlet property="lbl_title" destination="9gl-rH-3k7" id="ued-Wx-EfS"/>
                         <outlet property="lbl_zipCode" destination="xNd-oW-47Q" id="XeQ-n4-Jed"/>
+                        <outlet property="lbl_zipData" destination="h2b-X2-LNf" id="o5I-xL-lYH"/>
                         <outlet property="txtField_zipCode" destination="2nP-5q-hiQ" id="sSg-3L-FHt"/>
                     </connections>
                 </viewController>

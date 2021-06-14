@@ -18,7 +18,7 @@ struct ZipToLatLngRequest {
         self.resourceURL = resourceURL
     }
     
-    func getLatLng(completion: @escaping(Result<Data, DataError>) -> Void) {
+    func getLatLng(completion: @escaping(Result<[DataDetails], DataError>) -> Void) {
         let dataTask = URLSession.shared.dataTask(with: resourceURL) { data, _, _ in
             guard let jsonData = data else {
                 completion(.failure(.noDataAvailable))
@@ -28,7 +28,8 @@ struct ZipToLatLngRequest {
                 let decoder = JSONDecoder()
                 let dataResponse = try decoder.decode(Data.self, from: jsonData)
                 print("dataResponse:\n\(dataResponse)")
-                completion(.success(dataResponse))
+                let dataDetails = dataResponse.data
+                completion(.success(dataDetails ?? []))
             } catch {
                 completion(.failure(.canNotProcessData))
                 print(error)
